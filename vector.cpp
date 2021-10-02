@@ -1,38 +1,17 @@
-// This is the code for the problem statement:
-
-// There will be some integers given in each line of the input,the no. of lines is not specified …
-// you have to put them in a vector
-
-#include <iostream>
+#include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
+
 int main(){
+	 vector<int> arr = {1,4,1,1,0,0,2,4};
 
-int a;
-
-vector<int> vec;
-
-while(cin>>a)
-
-{
-
-vec.push_back(a);
-
+	 sort(arr.begin(),arr.end());
+	arr.erase(unique(arr.begin(),arr.end()),arr.end());
+	
+for (auto m : arr)
+cout << m << " ";
+	// nums.erase(remove(nums.begin(), nums.end(), val), nums.end());   //remove all occurance of val
+	
+	return 0;
 }
-
-for(int i=0;i<vec.size();i++)
-
-{
-
-cout<<vec[i]<<" ";
-
-}
-
-//distance(vec.begin(),unique(vec.begin(),vec.end()));  //distance gives size and uniques del all duplicates
-
-}
-
-/* Size of 2d vector
-row = vector.size();
-column = vector[0].size();  //row 0 me kitne elements h = no. of columns
-*/
